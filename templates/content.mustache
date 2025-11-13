@@ -1,0 +1,74 @@
+<div id="{{uniqid}}-course-format">
+    {{! 
+    Ne pas toucher la structure HTML du ul
+    Très important pour le mode édition
+    initialsection peut être modifié, il n'est pas affiché quand le mode édition est désactivé
+    }}
+    <ul class="{{format}}" data-for="course_sectionlist">
+        {{#initialsection}}
+            {{$ core_courseformat/local/content/section }}
+                {{> format_customsession/local/content/initialsection }}
+            {{/ core_courseformat/local/content/section }}
+            
+            <br><h2>{{#str}}activities_offered, format_customsession{{/str}}</h2>
+        {{/initialsection}}
+
+        {{#sections}}
+            {{$ core_courseformat/local/content/section }}
+                {{> format_customsession/local/content/section }}
+            {{/ core_courseformat/local/content/section }}
+        {{/sections}}
+    </ul>
+
+    {{! Les activités proposées - cette partie est affichée seulement quand le mode édition est désactivé }}
+    {{#hascustomsections}}
+        {{> format_customsession/customsession }}
+    {{/hascustomsections}}
+
+    {{! Entraînements - cette partie est affichée quand le mode édition est désactivé }}
+    {{^editing}}
+        <div>
+            <h3>{{#str}}training_text1, format_customsession{{/str}}<h3>
+            <p>
+                {{#str}}training_text2, format_customsession{{/str}}<br>
+                <a href="{{url_training}}" class="btn btn-primary ing-return-btn mr-3">
+                    {{#str}}training_button, format_customsession{{/str}}
+                </a>
+            </p>
+        </div>
+    {{/editing}}
+
+    {{! Validation - cette partie est affichée quand le mode édition est désactivé }}
+    {{#haslastsection}}
+        {{$ core_courseformat/local/content/section }}
+            {{> format_customsession/local/content/lastsection }}
+        {{/ core_courseformat/local/content/section }}
+    {{/haslastsection}}
+
+    {{! Cours terminé - cette partie est affichée quand le mode édition est désactivé et quand l'apprenant a terminé le cours }}
+    {{#coursefinished}}
+        {{^editing}}
+            <div>
+                <h3>{{#str}}finished_title, format_customsession{{/str}}<h3>
+                <div>
+                    <h4>{{#str}}finished_bloc1_text1, format_customsession{{/str}}</h4>
+                    <br>
+                    <p>{{#str}}finished_bloc1_text2, format_customsession{{/str}}</p>
+                </div>
+                <div>
+                    <p>{{#str}}finished_bloc2_text1, format_customsession{{/str}}</p>
+                    <a href="{{url_finished}}" class="btn btn-primary ing-return-btn mr-3">
+                        {{#str}}finished_button, format_customsession{{/str}}
+                    </a>
+                </div>
+                {{{novagrade}}}
+            </div>
+        {{/editing}}
+    {{/coursefinished}}
+
+    {{#bulkedittools}}
+        {{$ core_courseformat/local/content/bulkedittools}}
+            {{> core_courseformat/local/content/bulkedittools}}
+        {{/ core_courseformat/local/content/bulkedittools}}
+    {{/bulkedittools}}
+</div>

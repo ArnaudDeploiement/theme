@@ -1,0 +1,106 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template format_customsession/customsession
+
+    Displays the customsession.
+
+    Context variables required for this template:
+    * gridjustify - The justification for the grid.
+    * gridsections - The array of sections.
+    * showcompletion - If completion is on and shown.
+    * sectionbreak - There is a section break for this section.
+    * sectionbreakheading - Section break heading.
+    * number - Section number.
+    * imageresizemethodcrop - Image resize method is crop.
+    * sectiontitleingridbox - Show the section title?
+    * sectionbadgeingridbox - Show the section bagde if any?
+    * iscurrent - Current section?
+    * sectionurl - Section URL.
+    * sectionname - Section name.
+    * imageuri - Image URI.
+    * alttext - Image alternative text.
+    * generatedimageuri - Generated image URI.
+    * sectioncompletionmarkup - Section completion markup if any.
+    * uservisible - Section is visible to the user.
+
+    Example context (json):
+    {
+        "gridjustification" : "space-between",
+        "gridsections": [
+            {
+                "sectionbreak": false,
+                "sectionbreakheading": "",
+                "number": 41,
+                "sectionurl": "https://mymoodle/course/view.php?id=4&section=1",
+                "sectionname": "The first section",
+                "imageuri": false,
+                "generatedimageuri": "Base64 encoded svg",
+                "sectioncompletionmarkup": "",
+                "sectionuservisible": true
+            },
+            {
+                "sectionbreak": true,
+                "sectionbreakheading": "This is the section heading",
+                "number": 42,
+                "iscurrent": true,
+                "sectionurl": "https://mymoodle/course/view.php?id=4&section=2",
+                "sectionname": "The second section",
+                "generatedimageuri": false,
+                "sectioncompletionmarkup": "",
+                "sectionuservisible": true
+            }
+        ],
+        "imageresizemethodcrop": true,
+        "sectiontitleingridbox": true,
+        "sectionbadgeingridbox": true,
+        "showcompletion": true
+    }
+}}
+<div class="thecustomsection d-flex flex-wrap mt-2">
+    <div id="section-{{num}}" class="customsession-section card{{#iscurrent}} currentcustomsessionsection{{/iscurrent}}" title="{{sectionname}}">
+        <h3 class="h6 mb-0 text-truncate">{{{sectionname}}}</h3>
+        <div data-region="sectionbadges" class="sectionbadges d-flex align-items-center">
+            {{$ core_courseformat/local/content/section/badges }}
+                {{> core_courseformat/local/content/section/badges }}
+            {{/ core_courseformat/local/content/section/badges }}
+        </div>
+        <div class="{{#hasavailability}}description{{/hasavailability}} my-3" data-for="sectioninfo">
+            {{#summary}}
+                {{$ core_courseformat/local/content/section/summary }}
+                {{> core_courseformat/local/content/section/summary }}
+                {{/ core_courseformat/local/content/section/summary }}
+            {{/summary}}
+            {{#availability}}
+                {{$ core_courseformat/local/content/section/availability }}
+                    {{> core_courseformat/local/content/section/availability }}
+                {{/ core_courseformat/local/content/section/availability }}
+            {{/availability}}
+        </div>
+        {{#cmsummary}}
+            {{$ core_courseformat/local/content/section/cmsummary }}
+                {{> format_customsession/local/content/section/cmsummary }}
+            {{/ core_courseformat/local/content/section/cmsummary }}
+        {{/cmsummary}}
+        {{#cmlist}}
+            {{$ core_courseformat/local/content/section/cmlist }}
+                {{> core_courseformat/local/content/section/cmlist }}
+            {{/ core_courseformat/local/content/section/cmlist }}
+        {{/cmlist}}
+    </div>
+</div>
+
