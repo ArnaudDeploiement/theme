@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_2" data-name="Calque 2" xmlns="http://www.w3.org/2000/svg" width="196.94" height="134.68" viewBox="0 0 196.94 134.68">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #66c1bf;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #335472;
+      }
+    </style>
+  </defs>
+  <g id="Label">
+    <g id="Groupe_36" data-name="Groupe 36">
+      <g id="Tracé_69" data-name="Tracé 69">
+        <path class="cls-2" d="m3.21,13.08c-7.36,6.37-.75,117.13,6.76,119.57,7.52,2.44,181.83,3.25,185.59-.81S194.8.88,189.54.06C184.29-.75,10.72,6.57,3.21,13.08"/>
+      </g>
+      <g id="Tracé_70" data-name="Tracé 70">
+        <path class="cls-1" d="m73.84,46.43c-5.34,4.91,1.99,56.12,5.31,57.75,3.32,1.63,54.42-38.24,54.42-44.74s-54.42-17.9-59.73-13.01"/>
+      </g>
+    </g>
+  </g>
+</svg>
