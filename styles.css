@@ -23,13 +23,17 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/* === Variables de couleurs === */
+/* === Variables de couleurs (extraites des SVG de design) === */
 :root {
-    --cs-blue-dark: #3B5566;
-    --cs-turquoise: #68BDB4;
+    --cs-blue-dark: #335472;
+    --cs-blue-darker: #335572;
+    --cs-turquoise: #66c1bf;
     --cs-white: #FFFFFF;
     --cs-text-light: #FFFFFF;
     --cs-border-radius: 50px;
+    --cs-pink: #c92f51;
+    --cs-coral: #ec6d81;
+    --cs-grey: #707070;
 }
 
 /* === Styles généraux === */
@@ -304,7 +308,7 @@
 }
 
 .format-customsession .activity-wrapper:hover {
-    background-color: rgba(104, 189, 180, 0.1);
+    background-color: rgba(102, 193, 191, 0.1);
 }
 
 /* === Mode édition === */
