@@ -14,7 +14,7 @@
    along with Moodle.  If not, see <http://www.gnu.org/licenses/>. */
 
 /**
- * Custom Session Format.
+ * Custom Session Format - Styles
  *
  * @package    course/format
  * @subpackage customsession
@@ -22,4 +22,485 @@
  * @copyright  2025 Ingenium Digital Learning
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
+/* === Variables de couleurs === */
+:root {
+    --cs-blue-dark: #3B5566;
+    --cs-turquoise: #68BDB4;
+    --cs-white: #FFFFFF;
+    --cs-text-light: #FFFFFF;
+    --cs-border-radius: 50px;
+}
+
+/* === Styles généraux === */
+.format-customsession {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* === Section initiale - Questionnaire de départ === */
+.format-customsession .course-content > ul > li:first-child {
+    background: linear-gradient(135deg, var(--cs-blue-dark) 0%, #4a6a7f 100%);
+    border-radius: 20px;
+    padding: 80px 60px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+    color: var(--cs-white);
+    min-height: 400px;
+    background-image: url([[pix:format_customsession|customsession_01]]);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.format-customsession .course-content > ul > li:first-child .course-section-header {
+    position: relative;
+    z-index: 2;
+}
+
+.format-customsession .course-content > ul > li:first-child .sectionname {
+    color: var(--cs-white);
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.format-customsession .course-content > ul > li:first-child .content p {
+    color: var(--cs-white);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-align: right;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+.format-customsession .course-content > ul > li:first-child .content .bold {
+    font-weight: 700;
+}
+
+/* === Divider "Les activités proposées" === */
+.format-customsession .course-content > ul + br + h2 {
+    background: url([[pix:format_customsession|customsession_02]]) center center no-repeat;
+    background-size: contain;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0;
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--cs-blue-dark);
+    text-align: center;
+}
+
+/* === Sections régulières === */
+.format-customsession .course-content ul li.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: var(--cs-white);
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.format-customsession .course-content ul li.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.format-customsession .course-content ul li.section .sectionname {
+    color: var(--cs-blue-dark);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* === Section d'entraînement === */
+.format-customsession .training-section {
+    background: url([[pix:format_customsession|customsession_03]]) center center no-repeat;
+    background-size: cover;
+    background-color: var(--cs-white);
+    border-radius: 20px;
+    padding: 80px 60px;
+    margin: 60px 0;
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+}
+
+.format-customsession .training-section h3 {
+    color: var(--cs-blue-dark);
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.format-customsession .training-section p {
+    color: var(--cs-blue-dark);
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* === Dernière section - Validation === */
+.format-customsession .course-content > ul > li:last-child,
+.format-customsession .course-content > ul > li[data-number]:last-of-type {
+    background: linear-gradient(135deg, var(--cs-blue-dark) 0%, #4a6a7f 100%);
+    border-radius: 20px;
+    padding: 80px 60px;
+    margin: 60px 0;
+    position: relative;
+    overflow: hidden;
+    color: var(--cs-white);
+    min-height: 400px;
+    background-image: url([[pix:format_customsession|customsession_04]]);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.format-customsession .course-content > ul > li:last-child .sectionname,
+.format-customsession .course-content > ul > li[data-number]:last-of-type .sectionname {
+    color: var(--cs-white);
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.format-customsession .course-content > ul > li:last-child .content p,
+.format-customsession .course-content > ul > li[data-number]:last-of-type .content p {
+    color: var(--cs-white);
+    font-size: 1.25rem;
+    line-height: 1.6;
+    text-align: right;
+    max-width: 600px;
+    margin-left: auto;
+}
+
+/* === Divider "Et la suite..." === */
+.format-customsession .next-section-divider {
+    background: url([[pix:format_customsession|customsession_05]]) center center no-repeat;
+    background-size: contain;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 0;
+    font-size: 1.75rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--cs-blue-dark);
+}
+
+/* === Section finale - Bravo ! === */
+.format-customsession .finished-section {
+    background: url([[pix:format_customsession|customsession_06]]) center bottom no-repeat;
+    background-size: contain;
+    background-color: var(--cs-white);
+    border-radius: 20px;
+    padding: 60px;
+    margin: 60px 0;
+    position: relative;
+}
+
+.format-customsession .finished-section h3 {
+    color: var(--cs-blue-dark);
+    font-size: 2.5rem;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.format-customsession .finished-section h4 {
+    background: var(--cs-blue-dark);
+    color: var(--cs-white);
+    font-size: 2rem;
+    font-weight: 700;
+    font-style: italic;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+.format-customsession .finished-section > div {
+    margin-bottom: 40px;
+}
+
+.format-customsession .finished-section > div:last-child {
+    background: var(--cs-turquoise);
+    padding: 40px;
+    border-radius: 15px;
+    color: var(--cs-blue-dark);
+}
+
+.format-customsession .finished-section p {
+    color: var(--cs-blue-dark);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* === Boutons === */
+.format-customsession .btn,
+.format-customsession .ing-return-btn {
+    background-color: var(--cs-white);
+    color: var(--cs-blue-dark);
+    border: none;
+    border-radius: var(--cs-border-radius);
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.format-customsession .btn:hover,
+.format-customsession .ing-return-btn:hover {
+    background-color: var(--cs-turquoise);
+    color: var(--cs-white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+}
+
+/* Bouton dans section avec background turquoise */
+.format-customsession .finished-section > div:last-child .btn,
+.format-customsession .finished-section > div:last-child .ing-return-btn {
+    background-color: var(--cs-blue-dark);
+    color: var(--cs-white);
+}
+
+.format-customsession .finished-section > div:last-child .btn:hover,
+.format-customsession .finished-section > div:last-child .ing-return-btn:hover {
+    background-color: var(--cs-white);
+    color: var(--cs-blue-dark);
+}
+
+/* === Listes d'activités === */
+.format-customsession .section ul.img-text {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.format-customsession .section ul.img-text li {
+    margin-bottom: 15px;
+}
+
+.format-customsession .activity-wrapper {
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.format-customsession .activity-wrapper:hover {
+    background-color: rgba(104, 189, 180, 0.1);
+}
+
+/* === Mode édition === */
+.format-customsession.editing .course-content > ul > li:first-child,
+.format-customsession.editing .course-content > ul > li:last-child {
+    background: var(--cs-white);
+    color: var(--cs-blue-dark);
+}
+
+.format-customsession.editing .course-content > ul > li:first-child .sectionname,
+.format-customsession.editing .course-content > ul > li:last-child .sectionname {
+    color: var(--cs-blue-dark);
+}
+
+/* === Design responsive === */
+@media (max-width: 1200px) {
+    .format-customsession .course-content > ul > li:first-child,
+    .format-customsession .course-content > ul > li:last-child,
+    .format-customsession .course-content > ul > li[data-number]:last-of-type {
+        padding: 60px 40px;
+        min-height: 350px;
+    }
+
+    .format-customsession .course-content > ul > li:first-child .sectionname,
+    .format-customsession .course-content > ul > li:last-child .sectionname,
+    .format-customsession .course-content > ul > li[data-number]:last-of-type .sectionname {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .format-customsession .course-content > ul > li:first-child,
+    .format-customsession .course-content > ul > li:last-child,
+    .format-customsession .course-content > ul > li[data-number]:last-of-type {
+        padding: 40px 30px;
+        min-height: 300px;
+    }
+
+    .format-customsession .course-content > ul > li:first-child .sectionname,
+    .format-customsession .course-content > ul > li:last-child .sectionname,
+    .format-customsession .course-content > ul > li[data-number]:last-of-type .sectionname {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .format-customsession .course-content > ul > li:first-child .content p,
+    .format-customsession .course-content > ul > li:last-child .content p,
+    .format-customsession .course-content > ul > li[data-number]:last-of-type .content p {
+        font-size: 1.1rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .format-customsession .course-content > ul + br + h2 {
+        font-size: 1.5rem;
+        height: 80px;
+        margin: 40px 0;
+    }
+
+    .format-customsession .training-section {
+        padding: 40px 30px;
+        min-height: 250px;
+    }
+
+    .format-customsession .training-section h3 {
+        font-size: 1.5rem;
+    }
+
+    .format-customsession .finished-section {
+        padding: 40px 30px;
+    }
+
+    .format-customsession .finished-section h3 {
+        font-size: 2rem;
+    }
+
+    .format-customsession .finished-section h4 {
+        font-size: 1.5rem;
+        padding: 20px;
+    }
+
+    .format-customsession .btn,
+    .format-customsession .ing-return-btn {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .format-customsession .course-content > ul > li:first-child,
+    .format-customsession .course-content > ul > li:last-child,
+    .format-customsession .course-content > ul > li[data-number]:last-of-type {
+        padding: 30px 20px;
+        min-height: 250px;
+    }
+
+    .format-customsession .course-content > ul > li:first-child .sectionname,
+    .format-customsession .course-content > ul > li:last-child .sectionname,
+    .format-customsession .course-content > ul > li[data-number]:last-of-type .sectionname {
+        font-size: 1.75rem;
+    }
+
+    .format-customsession .course-content > ul > li:first-child .content p,
+    .format-customsession .course-content > ul > li:last-child .content p,
+    .format-customsession .course-content > ul > li[data-number]:last-of-type .content p {
+        font-size: 1rem;
+    }
+
+    .format-customsession .course-content > ul + br + h2 {
+        font-size: 1.25rem;
+        height: 60px;
+    }
+
+    .format-customsession .training-section h3 {
+        font-size: 1.25rem;
+    }
+
+    .format-customsession .finished-section h3 {
+        font-size: 1.75rem;
+    }
+
+    .format-customsession .btn,
+    .format-customsession .ing-return-btn {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* === Compatibilité avec le thème Moodle === */
+.format-customsession .activity .activityinstance {
+    display: flex;
+    align-items: center;
+}
+
+.format-customsession .activity .activityinstance .activityicon {
+    margin-right: 10px;
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.format-customsession .course-content ul li.section {
+    animation: fadeInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.format-customsession .course-content ul li.section:nth-child(1) { animation-delay: 0.1s; }
+.format-customsession .course-content ul li.section:nth-child(2) { animation-delay: 0.2s; }
+.format-customsession .course-content ul li.section:nth-child(3) { animation-delay: 0.3s; }
+.format-customsession .course-content ul li.section:nth-child(4) { animation-delay: 0.4s; }
+.format-customsession .course-content ul li.section:nth-child(5) { animation-delay: 0.5s; }
+
+/* === Accessibilité === */
+.format-customsession .btn:focus,
+.format-customsession .ing-return-btn:focus {
+    outline: 3px solid var(--cs-turquoise);
+    outline-offset: 2px;
+}
+
+.format-customsession a:focus {
+    outline: 2px solid var(--cs-turquoise);
+    outline-offset: 2px;
+}
+
+/* === Ajustements pour les illustrations === */
+.format-customsession .course-content > ul > li:first-child::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(59, 85, 102, 0.8), transparent);
+    pointer-events: none;
+}
+
+.format-customsession .course-content > ul > li:last-child::before,
+.format-customsession .course-content > ul > li[data-number]:last-of-type::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, rgba(59, 85, 102, 0.8), transparent);
+    pointer-events: none;
+}
 
